@@ -1,0 +1,1 @@
+webpackJsonp([2],{396:function(e,t,l){try{(function(){"use strict";function a(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var n=l(1),u=a(n),r=u["default"].createClass({displayName:"Page",render:function(){return u["default"].createElement("h1",null,"Terms")}});t["default"]=r,e.exports=t["default"]}).call(this)}finally{}}});
