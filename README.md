@@ -1,4 +1,4 @@
-# rewards-app
+# rewards-store-admin-portal
 
 - [Getting Started](#getting-started)
 - [Commands](#commands)
