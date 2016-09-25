@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+import express from 'express';
+const app = express();
 
 
 /************************************************************
@@ -9,14 +9,10 @@ var app = express();
  *   - style.css
  *   - index.html
  *
- *   Sample endpoints to demo async data fetching:
- *     - POST /landing
- *     - POST /home
- *
  ************************************************************/
 
 // Serve application file depending on environment
-app.get('/app.js', function(req, res) {
+app.get('/app.js', (req, res) => {
   if (process.env.PRODUCTION) {
     res.sendFile(__dirname + '/build/app.js');
   } else {
@@ -25,7 +21,7 @@ app.get('/app.js', function(req, res) {
 });
 
 // Serve aggregate stylesheet depending on environment
-app.get('/style.css', function(req, res) {
+app.get('/style.css', (req, res) => {
   if (process.env.PRODUCTION) {
     res.sendFile(__dirname + '/build/style.css');
   } else {
@@ -33,23 +29,9 @@ app.get('/style.css', function(req, res) {
   }
 });
 
-app.use(express.static(__dirname + '/build'));
-
 // Serve index page
-app.get('*', function(req, res) {
+app.get('*', (req, res) => {
   res.sendFile(__dirname + '/build/index.html');
-});
-
-app.post('/landing', function(req, res) {
-  res.json({
-    title: "Landing Page"
-  });
-});
-
-app.post('/home', function(req, res) {
-  res.json({
-    title: "Home Page"
-  });
 });
 
 
@@ -62,16 +44,16 @@ app.post('/home', function(req, res) {
  *************************************************************/
 
 if (!process.env.PRODUCTION) {
-  var webpack = require('webpack');
-  var WebpackDevServer = require('webpack-dev-server');
-  var config = require('./webpack.local.config');
+  const webpack = require('webpack');
+  const WebpackDevServer = require('webpack-dev-server');
+  const config = require('./webpack.local.config');
 
   new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
     hot: true,
     noInfo: true,
     historyApiFallback: true
-  }).listen(9090, 'localhost', function (err, result) {
+  }).listen(9090, 'localhost', (err, result) => {
     if (err) {
       console.log(err);
     }
@@ -85,10 +67,10 @@ if (!process.env.PRODUCTION) {
  *
  *****************/
 
-var port = process.env.PORT || 8080;
-var server = app.listen(port, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+const port = process.env.PORT || 8080;
+const server = app.listen(port, () => {
+  const host = server.address().address;
+  const port = server.address().port;
 
   console.log('Essential React listening at http://%s:%s', host, port);
 });
