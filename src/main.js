@@ -5,6 +5,11 @@
 // Polyfill
 import 'babel-polyfill';
 
+// WORKAROUND Some components use react-tap-event-plugin to listen for touch events
+// https://www.npmjs.com/package/material-ui#react-tap-event-plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 // Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -18,11 +23,6 @@ import './common/base.css';
 
 // Material
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-// WORKAROUND Some components use react-tap-event-plugin to listen for touch events
-// https://www.npmjs.com/package/material-ui#react-tap-event-plugin
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
 // ID of the DOM element to mount app on
 const DOM_APP_EL_ID = 'app';
