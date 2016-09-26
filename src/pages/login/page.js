@@ -8,7 +8,7 @@ export default class LoginPage extends React.Component {
   login() {
     browserHistory.push('/home');
   }
-  
+
   render() {
     return (
       <div>

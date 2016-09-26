@@ -4,16 +4,11 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
-const recentsIcon = <FontIcon className="material-icons">Nav1</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">Nav2</FontIcon>;
-const nearbyIcon = <FontIcon className="material-icons">Nav3</FontIcon>;
+const recentsIcon = <FontIcon className="material-icons">Featured</FontIcon>;
+const favoritesIcon = <FontIcon className="material-icons">Categories</FontIcon>;
+const nearbyIcon = <FontIcon className="material-icons">Group</FontIcon>;
 
-/**
- * A simple example of `BottomNavigation`, with three labels and icons
- * provided. The selected `BottomNavigationItem` is determined by application
- * state (for instance, by the URL).
- */
-class BottomNavigationExampleSimple extends Component {
+class Footer extends Component {
   state = {
     selectedIndex: 0,
   };
@@ -25,17 +20,17 @@ class BottomNavigationExampleSimple extends Component {
       <Paper zDepth={1} style={{position: 'fixed', bottom: 0, left: 0, right: 0}}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
-            label="text"
+            label="second text"
             icon={recentsIcon}
             onTouchTap={() => this.select(0)}
           />
           <BottomNavigationItem
-            label="text"
+            label="second text"
             icon={favoritesIcon}
             onTouchTap={() => this.select(1)}
           />
           <BottomNavigationItem
-            label="text"
+            label="second text"
             icon={nearbyIcon}
             onTouchTap={() => this.select(2)}
           />
@@ -45,4 +40,4 @@ class BottomNavigationExampleSimple extends Component {
   }
 }
 
-export default BottomNavigationExampleSimple;
+export default Footer;

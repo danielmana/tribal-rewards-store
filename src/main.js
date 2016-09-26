@@ -23,16 +23,24 @@ import './common/base.css';
 
 // Material
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { grey800, blue900 } from 'material-ui/styles/colors';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: grey800,
+    textColor: blue900
+  }
+});
 
 // ID of the DOM element to mount app on
 const DOM_APP_EL_ID = 'app';
 
 // Render the router
 ReactDOM.render((
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Router history={browserHistory}>
       {Routes}
     </Router>
   </MuiThemeProvider>
 ), document.getElementById(DOM_APP_EL_ID));
-

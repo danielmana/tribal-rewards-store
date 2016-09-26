@@ -1,45 +1,40 @@
 import React from "react";
 import {AppBar, FlatButton, Drawer, MenuItem, Divider} from 'material-ui';
 
-import BottomNavigation from './BottomNavigation';
+import Footer from './Footer';
+import Header from './Header';
 
 export default class App extends React.Component {
 	constructor() {
     super();
-    this.state = {open: false};
-    this._handleToggle = this._handleToggle.bind(this);
+    this.state = {drawerVisible: false};
+    this.showDrawer = this.showDrawer.bind(this);
   }
 
-  _handleToggle() {
-    this.setState({open: !this.state.open});
+  showDrawer() {
+    this.setState({drawerVisible: true});
   }
 
   render() {
     return (
       <div id="container">
-        <header>
-          <AppBar
-              title="Rewards Admin Portal"
-              onLeftIconButtonTouchTap={this._handleToggle}
-              iconElementRight={<FlatButton label="Action" />}
-              style={{position: 'fixed', top: 0, left: 0, right: 0}}/>
-        </header>
+        <Header onLeftIconButtonTouchTap={this.showDrawer}/>
         <Drawer
             docked={false}
-            open={this.state.open}
-            onRequestChange={(open) => this.setState({open})}>
+            open={this.state.drawerVisible}
+            onRequestChange={(drawerVisible) => this.setState({drawerVisible})}>
           <MenuItem>LOGO</MenuItem>
           <Divider />
-          <MenuItem>User Test</MenuItem>
+          <MenuItem>Fair J.</MenuItem>
           <Divider />
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
+          <MenuItem>Terms</MenuItem>
+          <MenuItem>Privacy Policy</MenuItem>
+          <MenuItem>Contact Us</MenuItem>
         </Drawer>
         <main style={{marginTop: 64}}>
           {this.props.children}
         </main>
-        <BottomNavigation />
+        <Footer />
       </div>
     );
   }

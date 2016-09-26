@@ -13,29 +13,29 @@ const styles = {
   gridList: {
     height: 1000,
     overflowY: 'auto',
-    marginBottom: 24
+    marginBottom: 50
   },
 };
 
 const tilesData = [
   {
     img: 'http://www.material-ui.com/images/grid-list/00-52-29-429_640.jpg',
-    title: 'Breakfast',
+    title: 'Featured Rewards Slider',
     author: 'jill111',
   },
   {
     img: 'http://www.material-ui.com/images/grid-list/burger-827309_640.jpg',
-    title: 'Tasty burger',
+    title: 'Cool Rewards Slider',
     author: 'pashminu',
   },
   {
     img: 'http://www.material-ui.com/images/grid-list/camera-813814_640.jpg',
-    title: 'Camera',
+    title: 'Important Rewards Slider',
     author: 'Danson67',
   },
   {
     img: 'http://www.material-ui.com/images/grid-list/morning-819362_640.jpg',
-    title: 'Morning',
+    title: 'Lasting Rewards Slider',
     author: 'fancycrave1',
   },
   {
@@ -63,10 +63,10 @@ const tilesData = [
 const GridListExampleSimple = () => (
   <div style={styles.root}>
     <GridList
+      cols={1}
       cellHeight={200}
       style={styles.gridList}
     >
-      <Subheader>Grid of items</Subheader>
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}
