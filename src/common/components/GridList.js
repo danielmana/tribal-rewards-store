@@ -66,7 +66,7 @@ const GridListExampleSimple = () => (
       cellHeight={200}
       style={styles.gridList}
     >
-      <Subheader>December</Subheader>
+      <Subheader>Grid of items</Subheader>
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}

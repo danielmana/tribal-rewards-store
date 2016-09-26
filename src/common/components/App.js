@@ -17,6 +17,13 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="container">
+        <header>
+          <AppBar
+              title="Rewards Admin Portal"
+              onLeftIconButtonTouchTap={this._handleToggle}
+              iconElementRight={<FlatButton label="Action" />}
+              style={{position: 'fixed', top: 0, left: 0, right: 0}}/>
+        </header>
         <Drawer
             docked={false}
             open={this.state.open}
@@ -29,14 +36,7 @@ export default class App extends React.Component {
           <MenuItem>Menu Item 2</MenuItem>
           <MenuItem>Menu Item 3</MenuItem>
         </Drawer>
-        <header>
-          <AppBar
-              title="Rewards Admin Portal"
-              onLeftIconButtonTouchTap={this._handleToggle}
-              iconElementRight={<FlatButton label="Action" />}
-              style={{position: 'fixed', top: 0, left: 0, right: 0}}/>
-        </header>
-        <main>
+        <main style={{marginTop: 64}}>
           {this.props.children}
         </main>
         <BottomNavigation />
