@@ -1,10 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
-var bootstrapPath = __dirname + '/node_modules/bootstrap/dist/css';
-var bootstrapSocialPath = __dirname + '/node_modules/bootstrap-social';
-var fontAwesomePath = __dirname + '/node_modules/font-awesome/css';
 /**
  * This is the Webpack configuration file for local development. It contains
  * local-specific configuration such as the React Hot Loader, as well as:
@@ -24,7 +20,7 @@ module.exports = {
   entry:  [
     "webpack-dev-server/client?http://localhost:9090",
     "webpack/hot/only-dev-server",
-    "./src/app"
+    "./src/main"
   ],
 
   // This will not actually create a bundle.js file in ./build. It is used
@@ -45,22 +41,14 @@ module.exports = {
   // Transform source code using Babel and React Hot Loader
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ["react-hot", "babel-loader?stage=0"] },
-      { test: /\.css$/, loader: "style!css" },
-      { test: /\.less$/, loader: 'style!css!less' },
-      { test: /\.scss$/, loader: 'style!css!sass' },
-      { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
-      { test: /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=10000' }
+      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ["react-hot", "babel-loader"] },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') }
     ]
   },
 
   // Automatically transform files with these extensions
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
-    modulesDirectories: ['node_modules', bootstrapPath, bootstrapSocialPath, fontAwesomePath]
+    extensions: ['', '.js', '.jsx', '.css']
   },
 
   // Additional plugins for CSS post processing using postcss-loader
