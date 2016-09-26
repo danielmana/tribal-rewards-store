@@ -8,7 +8,6 @@ class Header extends Component {
   }
 
   onLeftIconButtonTouchTap() {
-    console.log('onLeftIconButtonTouchTap');
     if (this.props.onLeftIconButtonTouchTap) {
       this.props.onLeftIconButtonTouchTap(event);
     }

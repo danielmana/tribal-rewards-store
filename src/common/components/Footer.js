@@ -1,37 +1,32 @@
-import React, {Component} from 'react';
-import FontIcon from 'material-ui/FontIcon';
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
-import Paper from 'material-ui/Paper';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import React, { Component } from 'react';
+import { Paper, FontIcon } from 'material-ui';
+import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 
-const recentsIcon = <FontIcon className="material-icons">Featured</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">Categories</FontIcon>;
-const nearbyIcon = <FontIcon className="material-icons">Group</FontIcon>;
 
 class Footer extends Component {
   state = {
     selectedIndex: 0,
   };
 
-  select = (index) => this.setState({selectedIndex: index});
+  select = (index) => this.setState({ selectedIndex: index });
 
   render() {
     return (
       <Paper zDepth={1} style={{position: 'fixed', bottom: 0, left: 0, right: 0}}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
-            label="second text"
-            icon={recentsIcon}
+            label="Featured"
+            icon={<FontIcon className="material-icons">star_border</FontIcon>}
             onTouchTap={() => this.select(0)}
           />
           <BottomNavigationItem
-            label="second text"
-            icon={favoritesIcon}
+            label="Categories"
+            icon={<FontIcon className="material-icons">view_list</FontIcon>}
             onTouchTap={() => this.select(1)}
           />
           <BottomNavigationItem
-            label="second text"
-            icon={nearbyIcon}
+            label="Group"
+            icon={<FontIcon className="material-icons">group_work</FontIcon>}
             onTouchTap={() => this.select(2)}
           />
         </BottomNavigation>
