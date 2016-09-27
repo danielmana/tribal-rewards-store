@@ -1,12 +1,12 @@
 {
-  "name": "Rewards Admin Portal",
+  "name": "Rewards Store",
   "description": "React with material design",
   "keywords": [
     "react",
     "babel",
     "starter"
   ],
-  "repository": "https://github.com/TribalTech/rewards-store-admin-portal",
+  "repository": "https://github.com/danielmana/tribal-rewards-store",
   "logo": "https://dl.dropboxusercontent.com/u/1803181/essential-react-logo.png",
   "env": {
     "PRODUCTION": "true",
