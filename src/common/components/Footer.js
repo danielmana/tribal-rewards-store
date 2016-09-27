@@ -12,7 +12,19 @@ class Footer extends Component {
 
   select = (index) => {
     this.setState({ selectedIndex: index });
-    browserHistory.push('/featured');
+    let path = '';
+    switch (index) {
+      case 0:
+        path = '/featured';
+        break;
+      case 1:
+        path = '/categories';
+        break;
+      case 2:
+        path = '/group';
+        break;
+    }
+    browserHistory.push(path);
   };
 
   render() {
