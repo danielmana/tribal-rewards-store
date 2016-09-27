@@ -1,3 +1,7 @@
+# build
+build/app.js
+build/style.css
+
 # Logs
 logs
 *.log
