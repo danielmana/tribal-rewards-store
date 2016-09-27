@@ -13,7 +13,9 @@ injectTapEventPlugin();
 // Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, useRouterHistory, browserHistory } from 'react-router';
+import { createHistory } from 'history';
+const history = useRouterHistory(createHistory)({ basename: '/tribal-rewards-store/' })
 
 // Routes
 import Routes from './common/components/Routes';
@@ -39,7 +41,7 @@ const DOM_APP_EL_ID = 'app';
 // Render the router
 ReactDOM.render((
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Router history={browserHistory}>
+    <Router history={history}>
       {Routes}
     </Router>
   </MuiThemeProvider>
