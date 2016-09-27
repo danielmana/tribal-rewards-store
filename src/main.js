@@ -35,8 +35,7 @@ import { grey800, blue900 } from 'material-ui/styles/colors';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: grey800,
-    textColor: blue900
+    primary1Color: grey800
   }
 });
 

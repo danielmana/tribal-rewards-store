@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { AppBar, FlatButton } from 'material-ui';
+import { AppBar } from 'material-ui';
+
+import HeaderUser from './HeaderUser';
 
 class Header extends Component {
   constructor(props) {
@@ -19,7 +21,7 @@ class Header extends Component {
         <AppBar
             title="Citizen Rewards"
             onLeftIconButtonTouchTap={this.onLeftIconButtonTouchTap}
-            iconElementRight={<FlatButton label="71,214" />}
+            iconElementRight={<HeaderUser />}
             style={{position: 'fixed', top: 0, left: 0, right: 0}}/>
       </header>
     );
