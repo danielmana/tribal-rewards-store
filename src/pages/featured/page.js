@@ -2,11 +2,11 @@ import React from "react";
 import GridList from '../../common/components/GridList'
 
 
-export default class HomePage extends React.Component {
+export default class FeaturedPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <GridList />
       </div>
     );
   }

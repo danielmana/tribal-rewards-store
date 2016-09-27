@@ -1,18 +1,18 @@
 import React from "react";
-import {AppBar, FlatButton, Drawer, MenuItem, Divider} from 'material-ui';
+import { AppBar, FlatButton, Drawer, MenuItem, Divider } from 'material-ui';
 
 import Footer from './Footer';
 import Header from './Header';
 
 export default class App extends React.Component {
-	constructor() {
+  constructor() {
     super();
-    this.state = {drawerVisible: false};
+    this.state = { drawerVisible: false };
     this.showDrawer = this.showDrawer.bind(this);
   }
 
   showDrawer() {
-    this.setState({drawerVisible: true});
+    this.setState({ drawerVisible: true });
   }
 
   render() {

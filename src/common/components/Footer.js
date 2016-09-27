@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { Paper, FontIcon } from 'material-ui';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 
 
 class Footer extends Component {
-  state = {
-    selectedIndex: 0,
-  };
+  constructor() {
+    super();
+    this.state = { selectedIndex: null };
+  }
 
-  select = (index) => this.setState({ selectedIndex: index });
+  select = (index) => {
+    this.setState({ selectedIndex: index });
+    browserHistory.push('/featured');
+  };
 
   render() {
     return (

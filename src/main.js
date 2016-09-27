@@ -13,9 +13,14 @@ injectTapEventPlugin();
 // Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, useRouterHistory, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
+
+// WORKAROUND set basename to deploy on gh-pages
+import { useRouterHistory } from 'react-router';
 import { createHistory } from 'history';
-const history = useRouterHistory(createHistory)({ basename: '/tribal-rewards-store/' })
+const history = window.location.hostname === 'localhost' ?
+  browserHistory :
+  useRouterHistory(createHistory)({ basename: '/tribal-rewards-store/' })
 
 // Routes
 import Routes from './common/components/Routes';
