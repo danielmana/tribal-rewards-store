@@ -1,12 +1,12 @@
 {
-  "name": "Essential React",
-  "description": "A minimal skeleton for building testable React apps using Babel",
+  "name": "Rewards Admin Portal",
+  "description": "React with material design",
   "keywords": [
     "react",
     "babel",
     "starter"
   ],
-  "repository": "https://github.com/pheuter/essential-react",
+  "repository": "https://github.com/TribalTech/rewards-store-admin-portal",
   "logo": "https://dl.dropboxusercontent.com/u/1803181/essential-react-logo.png",
   "env": {
     "PRODUCTION": "true",
