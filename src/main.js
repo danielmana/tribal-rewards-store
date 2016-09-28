@@ -15,13 +15,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 
-// WORKAROUND set basename to deploy on gh-pages
-import { useRouterHistory } from 'react-router';
-import { createHistory } from 'history';
-const history = window.location.hostname === 'localhost' ?
-  browserHistory :
-  useRouterHistory(createHistory)({ basename: '/tribal-rewards-store/' })
-
 // Routes
 import Routes from './common/components/Routes';
 
@@ -45,7 +38,7 @@ const DOM_APP_EL_ID = 'app';
 // Render the router
 ReactDOM.render((
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Router history={history}>
+    <Router history={browserHistory}>
       {Routes}
     </Router>
   </MuiThemeProvider>
